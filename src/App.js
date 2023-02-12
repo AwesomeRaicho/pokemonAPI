@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+//import Pokemon from './components/pokemon.component';
+import Categories from './components/categories.component';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Generations from './components/generations.component';
+import Generation from './components/individual-generation';
+
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Categories />
+        <Routes>
+          <Route path={'/'} element={<Generations />}/>
+          <Route path={'/generation/:genId'} element={<Generation />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

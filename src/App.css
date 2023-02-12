@@ -1,38 +1,131 @@
+body{
+  background-color: rgba(127, 255, 212, 0.651);
+}
+
 .App {
+  
+}
+
+
+
+.pokemon-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.individual-pokemon{
+  border: solid gray 1px;
+  position: relative;
+  margin: 5px;
+  background-color: white;
+  border-radius: 10px;
+  width: 125px;
+  height: 155px;
+  transition: all linear 200ms;
+}
+
+.individual-pokemon:hover{
+  transform: scale(1.3);
+  z-index: 3;
+}
+
+
+.pokemon-sprite{
+  width: 125px;
+  
+}
+
+.pokemon-sprite{
+  width: 125px; 
+}
+
+.pokemon-name{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  margin-bottom: 3px;
+  text-decoration: none;
+}
+
+.pokemon-number{
+  position: absolute;
+  font-weight: 600;
+  top: 0;
+  left: 5px;
+  color: yellow;
+  font-size: 22px;
+  -webkit-text-stroke: 1px gray;
+  font-weight: 700;
+}
+/* GENERATIONS LINKS */
+.generations-container{
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+.inv-generation-link{
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  padding: 0px;
+  margin: 20px ;
+}
+.generation-link-container{
+  border: solid 1px black;
+  width: 300px;
+  min-height: 250px;
+  background-color: white;
+  height: 100%;
+}
+
+.generation-link-name{
+  text-align: center;
+  margin: 30px;
+  margin-top: 150px;
+}
+
+.generation-link-region{
+  text-align: center;
+}
+.games-titles{
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+.working-progress{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.starters-image-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
+  position: relative;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: baseline;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.starter-pokemons{
+  position: absolute;
+  height: 175px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.starters-image-container > img:nth-child(1){
+  left: 00px;
+  top: 20px;
+}
+.starters-image-container > img:nth-child(2){
+ z-index: 2;
+ top: -20px;
+}
+.starters-image-container > img:nth-child(3){
+  right: 0px;
+
+  top: 20px;
 }
