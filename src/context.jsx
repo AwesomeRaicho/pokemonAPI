@@ -33,11 +33,64 @@ export const AppProvier = ({children}) => {
     getAllData();
     }, []);
 
+    // getOneGeneration gets the individual generation that was clicked when selecting one generation for view
+    const getOneGeneration = (gen) => {
+         const fonundGeneration = generations.find((value)=>{
+            return value.name === gen;
+        });
+        return fonundGeneration;
+    };
+
+    // 'capFirst' makes sure the first letter is capitalized because the API returns lower case names.
+
+    function capFirst(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
+    // "genNumber" makes sure there is a number dusplayed and not a roman representation
+
+    const genNumber = (word) => {
+        switch (word.slice(word.length-5, word.length)) {
+            case 'ion-i':
+                return word.slice(0, word.length-2) + ' 1';
+            
+            case 'on-ii':
+                return word.slice(0, word.length-3) + ' 2';
+            
+            case 'n-iii':
+                return word.slice(0, word.length-4) + ' 3';
+            
+            case 'on-iv':
+                return word.slice(0, word.length-3) + ' 4';
+            
+            case 'ion-v':
+                return word.slice(0, word.length-2) + ' 5';
+            
+            case 'on-vi':
+                return word.slice(0, word.length-3) + ' 6';
+            
+            case 'n-vii':
+                return word.slice(0, word.length-4) + ' 7';
+            
+            case '-viii':
+                return word.slice(0, word.length-5) + ' 8';
+            
+            case 'on-ix':
+                return word.slice(0, word.length-3) + ' 9';
+            default:
+                return word;
+        }
+    };
+
     return(
         <AppContext.Provider value={{
             loading,
             setLoading,
-            generations
+            generations,
+            getOneGeneration,
+            capFirst,
+            genNumber
+
         }}>
             {children}
         </AppContext.Provider>

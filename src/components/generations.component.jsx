@@ -6,7 +6,7 @@ import { useGlobalContext } from '../context';
 const Generations = () => {
 
     // Deconstructing from context
-    const {generations, loading, setLoading} = useGlobalContext();
+    const {generations, loading, setLoading, capFirst, genNumber} = useGlobalContext();
 
     const [images, setImages] = useState([]);
 
@@ -19,7 +19,13 @@ const Generations = () => {
             const sets = generations.map((value)=>{
                 const tempSet = []
                 for (let i = 0; i < 3; i++) {
-                    tempSet.push(value.pokemon_species[i].name);
+                    if(value.name === 'generation-v'){
+                        tempSet.push(value.pokemon_species[i+1].name);
+                    }else{
+                        tempSet.push(value.pokemon_species[i].name);
+
+                    }
+                    
                 }
                 return tempSet; 
             });
@@ -83,16 +89,17 @@ const Generations = () => {
                                     }
                                     return null;
                                 })}
+                                <div className='background-bubble'></div>
                             </div>
                             
                          
-                            <h1 className='generation-link-name'>{name}</h1>
+                            <h1 className='generation-link-name'>{genNumber(capFirst(name))}</h1>
                             
-                            <h2 className='generation-link-region'>The {main_region.name} region</h2>
-                            <h3 className='games-titles'>Games: </h3>
+                            <h2 className='generation-link-region'>The {capFirst(main_region.name)} region</h2>
+                            <h3 className='games-titles'>Versions: </h3>
                             <ul className='versions'>
                                 {version_groups.map((value,index) =>{
-                                    return <li key={index} className='generation-link-versions'>{value.name}</li>
+                                    return <li key={index} className='generation-link-versions'>{capFirst(value.name)}</li>
                                 })}
                             </ul>
                         </div>

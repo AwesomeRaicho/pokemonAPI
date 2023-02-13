@@ -10,6 +10,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <div className='background-image-container'></div>
       <BrowserRouter>
         <Categories />
         <Routes>

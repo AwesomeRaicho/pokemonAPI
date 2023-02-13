@@ -1,29 +1,29 @@
-import React,{useState, useEffect } from 'react'
-import { useGlobalContext } from '../context';
+
 import { IndividualPokemon } from './individual-pokemon.component';
 
-const Pokemon = () => {
+const Pokemon = ({pokemon}) => {
 
-
-  const { pokemon, loading } = useGlobalContext();
-
-  if(loading){
-    return (
-      <h1>LOADING...</h1>
-    )
-  }
 
   console.log(pokemon)
+
+
+
+
+
+
   return (
-    <div className='pokemon-container'>
+      <section>
+        <div className='section-title'>
+          <h1 >Pokemon <br /> from the region</h1>
+        </div>
 
-      {pokemon.results.map((value, index)=>{
-        return <IndividualPokemon key={index} item={value}/>;
-      })}
-
-      {/* <IndividualPokemon item={pokemon.results[0]}/> */}
-      
-    </div>
+        <div className='pokemon-container'>
+          {pokemon.map((value, index)=>{
+            return <IndividualPokemon key={index} item={value}/>;
+          })}
+          
+        </div>
+      </section>
   )
 }
 

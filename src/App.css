@@ -1,12 +1,234 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body{
   background-color: rgba(127, 255, 212, 0.651);
+  font-family: 'VT323', monospace;
+}
+.background-image-container{
+  background-image: url('../public/images/pokemon-background.jpg');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  background-size: cover;
+  opacity: .45;
 }
 
-.App {
+.categories-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
+  margin-right: 50px;
   
 }
 
+.navigation-logo{
+  width: 350px;
+}
 
+.category-link {
+  font-size: 50px;
+  background-color: rgb(99, 99, 255);
+  padding: 10px;
+  border-radius: 50px;
+  border: 5px blue solid;
+  text-decoration: none;
+  color: white;
+  box-shadow: 2px 2px 8px gray;
+  
+  margin-left: auto;
+}
+
+
+/* GENERATIONS LINKS */
+.generations-container{
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+.inv-generation-link{
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  padding: 0px;
+  margin: 20px ;
+}
+.generation-link-container{
+  border: solid 10px beige;
+  width: 300px;
+  min-height: 250px;
+  height: 100%;
+  box-shadow: 2px 2px 12px gray;
+  background-color: #ffd83b;
+  border-radius: 10px;
+  transition: all 300ms linear;
+}
+.generation-link-container:hover{
+  transform: scale(1.1);
+}
+
+
+.generation-link-name{
+  text-align: center;
+  margin: 30px;
+  margin-top: 175px;
+  margin-bottom: 0px;
+  font-size: 50px;
+}
+
+.generation-link-region{
+  text-align: center;
+  font-size: 35px;
+  margin: 0px;
+}
+.games-titles{
+  margin-left: 20px;
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+
+.generation-link-versions{
+  font-size: 25px;
+}
+
+.working-progress{
+  text-align: center;
+}
+
+.starters-image-container{
+  display: flex;
+  margin: auto;
+  position: relative;
+  justify-content: center;
+  align-items: baseline;
+  top:0;
+}
+
+.background-bubble{
+  position: absolute;
+  width: 75%;
+  height: 120px;
+  top: 45px;
+  border-radius: 450px / 250px;
+  background-color: white;
+  box-shadow: 2px 2px 8px gray;
+  border: blue solid 3px;
+}
+
+.starter-pokemons{
+  position: absolute;
+  height: 175px;
+}
+
+
+.starters-image-container > img:nth-child(1){
+  left: 00px;
+  top: 20px;
+  z-index: 2;
+}
+.starters-image-container > img:nth-child(2){
+ z-index: 2;
+ top: -20px;
+}
+.starters-image-container > img:nth-child(3){
+  right: 0px;
+  top: 20px;
+  z-index: 2;
+}
+
+
+/*************** INDIVIDUAL REGION PAGE *****************/
+
+/* HERO */
+
+.hero-container{
+  
+  background-color: #ffd83b;
+  border-top: 10px beige solid;
+  border-bottom: 10px beige solid;
+}
+
+.generation-hero{
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.hero-map-container {
+}
+
+.hero-map {
+  width: 600px;
+  object-fit: fill;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-right: 30px;
+  box-shadow: 4px 4px 8px black;
+  border: 5px solid rgb(121, 121, 252);
+  max-height: 600px;
+}
+.hero-info-container{
+  margin-left: 30px;
+  width: auto;
+  border-radius: 50px;
+  padding: 10px;
+}
+.hero-generation{
+  text-align: center;
+  font-size: 75px;
+  margin: 50px;
+}
+.hero-region{
+  text-align: center;
+  font-size: 60px;
+}
+.hero-list{
+  border: solid gray 1px;
+  box-shadow: 4px 4px 8px black;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: beige;
+  font-size: 20px;
+}
+
+.hero-games-label{
+  margin: 0px;
+  padding: 0px;
+  font-size: 40px;
+}
+
+
+
+
+
+/* POKEMON SECTION */
+
+
+
+.section-title{
+  display: flex;
+  margin: 20px;
+  
+}
+
+.section-title > h1{
+  text-align: center;
+  background-color: #ffd83b;
+  border: 10px beige solid;
+  margin: auto;
+  font-size: 50px;
+  padding: 30px;
+  border-radius: 30px;
+}
 
 .pokemon-container{
   display: flex;
@@ -48,84 +270,92 @@ body{
   text-align: center;
   margin-bottom: 3px;
   text-decoration: none;
+  font-size: 25px;
 }
 
 .pokemon-number{
   position: absolute;
   font-weight: 600;
-  top: 0;
-  left: 5px;
-  color: yellow;
-  font-size: 22px;
-  -webkit-text-stroke: 1px gray;
-  font-weight: 700;
-}
-/* GENERATIONS LINKS */
-.generations-container{
-  max-width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-}
-.inv-generation-link{
-  text-decoration: none;
-  color: black;
-  margin: auto;
-  padding: 0px;
-  margin: 20px ;
-}
-.generation-link-container{
-  border: solid 1px black;
-  width: 300px;
-  min-height: 250px;
-  background-color: white;
-  height: 100%;
+  top: -10%;
+  left: -10%;
+  color: blue;
+  font-size: 25px;
+  text-shadow: 2px 2px 3px gray;
+  background-color: #ffd83b;
+  border: beige 3px solid;
+  padding: 3px;
+  border-radius: 10px;
+  z-index: 2;
 }
 
-.generation-link-name{
-  text-align: center;
-  margin: 30px;
-  margin-top: 150px;
-}
+/**************************************************/
 
-.generation-link-region{
-  text-align: center;
-}
-.games-titles{
-  margin-left: 20px;
-  margin-bottom: 0px;
-}
+@media screen and (max-width: 900px){
+  body{
+  }
+/*Navigation*/
+  .categories-container{
 
-.working-progress{
-  text-align: center;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .navigation-logo{
+    width: 500px;
+  }
+  
+  .category-link {
+    font-size: 30px;
+    background-color: rgb(99, 99, 255);
+    padding: 10px;
+    border-radius: 50px;
+    border: 5px blue solid;
+    text-decoration: none;
+    color: white;
+    box-shadow: 2px 2px 8px gray;
+    
+    margin-left: auto;
+  }
 
-.starters-image-container{
-  display: flex;
-  margin: auto;
-  position: relative;
-  justify-content: center;
-  align-items: baseline;
+
+/*Hero*/
+
+  .generation-hero{
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .hero-map-container {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .hero-map {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .hero-info-container{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .hero-list{
+    padding-left: 50px;
+    width: 65%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
   
 }
-
-.starter-pokemons{
-  position: absolute;
-  height: 175px;
-}
-
-
-.starters-image-container > img:nth-child(1){
-  left: 00px;
-  top: 20px;
-}
-.starters-image-container > img:nth-child(2){
- z-index: 2;
- top: -20px;
-}
-.starters-image-container > img:nth-child(3){
-  right: 0px;
-
-  top: 20px;
-}
+/****************** END OF INDIVIDUAL REGION PAGE *******************/
