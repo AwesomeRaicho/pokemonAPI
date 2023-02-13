@@ -162,8 +162,6 @@ body{
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.hero-map-container {
-}
 
 .hero-map {
   width: 600px;
@@ -197,7 +195,7 @@ body{
   margin: 5px;
   border-radius: 20px;
   background-color: beige;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .hero-games-label{
@@ -290,9 +288,8 @@ body{
 
 /**************************************************/
 
-@media screen and (max-width: 900px){
-  body{
-  }
+@media screen and (max-width: 1000px){
+
 /*Navigation*/
   .categories-container{
 
@@ -354,6 +351,7 @@ body{
     width: 65%;
     margin: auto;
     margin-bottom: 20px;
+    font-size: 25px;
   }
   
   

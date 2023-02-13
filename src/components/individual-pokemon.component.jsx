@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { useGlobalContext } from '../context';
 
@@ -24,7 +23,7 @@ export const IndividualPokemon = ({item}) => {
             console.log(error);
         }}
         getPokemon();
-    },[]);
+    },[url,setLoading]);
 
     
 
