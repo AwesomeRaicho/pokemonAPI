@@ -45,7 +45,7 @@ const Generation = () => {
                         </div>
                     </div>
                     <div className='hero-map-container'>
-                        <img className='hero-map' src={`/images/${gen.main_region.name}.png`} alt={gen.main_region.name} />
+                        <img className='hero-map' src={`/images/${gen.main_region.name}.jpg`} alt={gen.main_region.name} />
                     </div>
                 </div>
             </div>
