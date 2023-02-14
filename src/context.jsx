@@ -89,7 +89,7 @@ export const AppProvier = ({children}) => {
         for (let i = 1; i < pokemonArray.length; i++) {
           let currentPokemon = pokemonArray[i];
           let j = i - 1;
-          while (j >= 0 && pokemonArray[j].order > currentPokemon.order) {
+          while (j >= 0 && pokemonArray[j].id > currentPokemon.id) {
             pokemonArray[j + 1] = pokemonArray[j];
             j--;
           }
