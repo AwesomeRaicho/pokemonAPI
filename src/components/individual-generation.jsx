@@ -17,8 +17,6 @@ const Generation = () => {
         }
     },[gen, genId, getOneGeneration]);
 
-    console.log(gen)
-
 
     if(!gen){
         return (

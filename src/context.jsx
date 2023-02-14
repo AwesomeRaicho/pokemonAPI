@@ -82,6 +82,25 @@ export const AppProvier = ({children}) => {
         }
     };
 
+
+    // Insertion algorithm for sorting partially ordered pokemon before the are rendered
+
+    function insertionSort(pokemonArray) {
+        for (let i = 1; i < pokemonArray.length; i++) {
+          let currentPokemon = pokemonArray[i];
+          let j = i - 1;
+          while (j >= 0 && pokemonArray[j].order > currentPokemon.order) {
+            pokemonArray[j + 1] = pokemonArray[j];
+            j--;
+          }
+          pokemonArray[j + 1] = currentPokemon;
+        }
+        return pokemonArray;
+      }
+
+
+
+
     return(
         <AppContext.Provider value={{
             loading,
@@ -89,8 +108,8 @@ export const AppProvier = ({children}) => {
             generations,
             getOneGeneration,
             capFirst,
-            genNumber
-
+            genNumber,
+            insertionSort
         }}>
             {children}
         </AppContext.Provider>

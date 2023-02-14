@@ -4,7 +4,23 @@
 body{
   background-color: rgba(127, 255, 212, 0.651);
   font-family: 'VT323', monospace;
+
 }
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/***** NAVIGATION/CATEGORIES *****/
+.navigation-back{
+  background-color: #ffd83b;
+  width: 100%;
+  padding: 0%;
+}
+
 .background-image-container{
   background-image: url('../public/images/pokemon-background.jpg');
   position: fixed;
@@ -14,15 +30,25 @@ body{
   top: 0;
   background-size: cover;
   opacity: .45;
+  background-position: center;
 }
 
 .categories-container{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 20px;
   margin-right: 50px;
-  
+  margin-top: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 4;
+  background-color: #ffd83b;
+  border-bottom: #d1b02e 1px solid;
+}
+
+.categories-container2{
+  height: 135px;
 }
 
 .navigation-logo{
@@ -32,16 +58,16 @@ body{
 .category-link {
   font-size: 50px;
   background-color: rgb(99, 99, 255);
+  border: 5px blue solid;
   padding: 10px;
   border-radius: 50px;
-  border: 5px blue solid;
   text-decoration: none;
   color: white;
   box-shadow: 2px 2px 8px gray;
-  
   margin-left: auto;
+  margin-right: 30px;
 }
-
+/***** NAVIGATION/CATEGORIES END *****/
 
 /* GENERATIONS LINKS */
 .generations-container{
@@ -50,6 +76,7 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+  box-sizing: border-box;
 }
 .inv-generation-link{
   text-decoration: none;
@@ -292,19 +319,19 @@ body{
 
 /*Navigation*/
   .categories-container{
-
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     
   }
-  
+  .categories-container2{
+    height: 85px;
+  }
   .navigation-logo{
-    width: 500px;
+    width: 200px;
   }
   
   .category-link {
-    font-size: 30px;
+    font-size: 25px;
     background-color: rgb(99, 99, 255);
     padding: 10px;
     border-radius: 50px;
@@ -355,5 +382,52 @@ body{
   }
   
   
+}
+
+@media screen and (max-width: 500px){
+  .categories-container{
+
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  .categories-container2{
+
+    height: 50px;
+  }
+
+  
+  .navigation-logo{
+    width: 100px;
+  }
+  
+  .category-link {
+    font-size: 20px;
+    background-color: rgb(99, 99, 255);
+    padding: 5px;
+    border-radius: 50px;
+    border: 5px blue solid;
+    text-decoration: none;
+    color: white;
+    box-shadow: 2px 2px 8px gray;
+    margin-left: auto;
+    margin-right: 0px;
+  }
+
+/****** INDIVIDUAL GENERATION PAGE ******/
+  
+.hero-container{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.hero-generation{
+  margin: 10px;
+}
+
 }
 /****************** END OF INDIVIDUAL REGION PAGE *******************/

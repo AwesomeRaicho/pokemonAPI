@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route path={'/'} element={<Generations />}/>
           <Route path={'/generation/:genId'} element={<Generation />}/>
+          <Route path={'*'} element={<Generations />}/>
         </Routes>
       </BrowserRouter>
     </div>
