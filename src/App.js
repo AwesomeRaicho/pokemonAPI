@@ -5,6 +5,7 @@ import Generations from './components/generations.component';
 import Generation from './components/individual-generation';
 
 import './App.css';
+import './styles/pokemon-modal.css'
 
 
 function App() {

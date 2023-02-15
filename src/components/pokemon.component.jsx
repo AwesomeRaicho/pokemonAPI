@@ -3,7 +3,9 @@ import { useGlobalContext } from '../context';
 
 import { IndividualPokemon } from './individual-pokemon.component';
 
-const Pokemon = ({pokemon}) => {
+const Pokemon = ({pokemon, givePokemonInfo}) => {
+
+
 
 
   // do all calls here to sort and give the pokemons in order
@@ -19,7 +21,7 @@ const Pokemon = ({pokemon}) => {
       try {
         setLoading(true);
         const getFullPokemons = pokemon.map(async (value) => {
-          const response = await fetch(value.url);
+          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value.name}`);
           return await response.json()
         });
         
@@ -50,7 +52,7 @@ const Pokemon = ({pokemon}) => {
 
         <div className='pokemon-container'>
           {insertionSort(invPokemon).map((value, index)=>{
-            return <IndividualPokemon key={index} pokemon={value}/>;
+            return <IndividualPokemon key={index} pokemon={value} givePokemonInfo={givePokemonInfo}/>;
           })}
           
         </div>

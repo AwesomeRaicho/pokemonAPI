@@ -3,19 +3,36 @@ import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import Pokemon from './pokemon.component';
 
+import PokemonPage from './individual-pokemon-modal';
+
 const Generation = () => {
 
     const [gen, setGen] = useState(null)
     const {genId} = useParams();
+
+    // states fot activating modal and give information
+
+    const [ pokemonPage, setPokemonPage ] = useState(null);
+    const [ pokeModalShowing, setPokeModalShowing ] = useState(false)
+
+    const givePokemonInfo = (pokemon) => {
+        setPokeModalShowing(true)
+        setPokemonPage(pokemon);
+    }
+    const closePokemonModal = () => {
+        setPokeModalShowing(false)
+    }
+
+
 
     const {getOneGeneration, capFirst, genNumber} = useGlobalContext();
 
     useEffect(()=>{
         const fonundGeneration = getOneGeneration(genId);
         if(fonundGeneration){
-            setGen(fonundGeneration)
+            setGen(fonundGeneration);
         }
-    },[gen, genId, getOneGeneration]);
+    },[gen, genId, getOneGeneration, pokemonPage, pokeModalShowing]);
 
 
     if(!gen){
@@ -50,8 +67,8 @@ const Generation = () => {
 
             {/* POKEMONS */}
 
-            <Pokemon pokemon={gen.pokemon_species}/>
-
+            <Pokemon pokemon={gen.pokemon_species} givePokemonInfo={givePokemonInfo}/>
+            {pokeModalShowing && <PokemonPage {...pokemonPage} closePokemonModal={closePokemonModal}/>}
 
 
         </div>
