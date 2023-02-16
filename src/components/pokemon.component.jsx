@@ -21,12 +21,23 @@ const Pokemon = ({pokemon, givePokemonInfo}) => {
       try {
         setLoading(true);
         const getFullPokemons = pokemon.map(async (value) => {
-          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value.name}`);
+          const response = await fetch(`${value.url}`);
           return await response.json()
         });
         
         const data = await Promise.all(getFullPokemons);
-        setInvPokemon(insertionSort(data))
+
+        const getFullPokemons2 = data.map(async (value) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${value.id}`);
+        return await response.json();
+        });
+
+        const data2 = await Promise.all(getFullPokemons2);
+
+
+
+
+        setInvPokemon(insertionSort(data2))
         setLoading(false);
         
       } catch (error) {
@@ -38,7 +49,6 @@ const Pokemon = ({pokemon, givePokemonInfo}) => {
     getFullPokemon();
     
   },[pokemon, loading, setLoading, insertionSort]);
-
 
 
 

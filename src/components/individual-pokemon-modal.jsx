@@ -11,7 +11,6 @@ const PokemonPage = (pokemonPage) => {
 
 
 
-  console.log(pokemonPage);
  
   return (
     <div className='pokemon-modal-fullbackground'>
