@@ -16,11 +16,13 @@ const Generation = () => {
     const [ pokeModalShowing, setPokeModalShowing ] = useState(false)
 
     const givePokemonInfo = (pokemon) => {
-        setPokeModalShowing(true)
+        setPokeModalShowing(true);
+        document.body.style.overflow = "hidden";
         setPokemonPage(pokemon);
     }
     const closePokemonModal = () => {
         setPokeModalShowing(false)
+        document.body.style.overflow = "auto";
     }
 
 

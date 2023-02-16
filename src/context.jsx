@@ -109,7 +109,7 @@ export const AppProvier = ({children}) => {
             getOneGeneration,
             capFirst,
             genNumber,
-            insertionSort
+            insertionSort,
         }}>
             {children}
         </AppContext.Provider>
